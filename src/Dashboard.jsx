@@ -4,9 +4,8 @@ import './Dashboard.css';
 function Dashboard(props) {
    const registration = useSearchInput('');
   
-   function searchReg(){
-
-   }
+   
+   
 
  
   // handle click event of logout button
