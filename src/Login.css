@@ -1,0 +1,16 @@
+#LoginBar{
+    position: absolute;
+    left: 40%;
+    top: 20%;
+    align-items: center;
+    justify-content: center;
+    color:rgb(85, 255, 249) ;
+    font-size: 7mm;
+    font-family: Arial, Helvetica, sans-serif
+    
+}
+body{
+    background-image: url(loginbackground.jpg);
+    background-position: left top;
+    background-repeat: no-repeat;
+}
