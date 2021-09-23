@@ -13,7 +13,7 @@ function Home(props) {
       Lets Catch Some Bad Guys!
       <br />
       <button id= "logPage" onClick={moveToLogin}>Go To Secure Login</button>
-      
+  
     </div>
   );
 }

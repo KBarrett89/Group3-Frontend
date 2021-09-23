@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard'
 import Results from './components/Results';
 
 
+
  
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Route path="/login" component={Login} />
               <Route path="/dashboard" component={Dashboard} />
               <Route path="/results/:search" component={Results} />
+              
             </Switch>
           </div>
         </div>
