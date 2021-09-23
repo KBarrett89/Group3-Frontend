@@ -1,5 +1,6 @@
 FROM node
 COPY . .
 RUN npm install dependencies
-ENTRYPOINT ["npm", "run", "build"]
+RUN npm run build
+ENTRYPOINT ["npm", "start"]
 
