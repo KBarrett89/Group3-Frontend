@@ -5,7 +5,7 @@ function Dashboard(props) {
    const registration = useSearchInput('');
   
    
-   
+
 
  
   // handle click event of logout button
