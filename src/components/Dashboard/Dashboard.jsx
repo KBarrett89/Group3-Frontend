@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Dashboard.css';
+
  
 function Dashboard(props) {
    const registration = useSearchInput('');

@@ -3,13 +3,22 @@ import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Dashboard from './components/Dashboard/Dashboard';
 import Login from './components/Login/Login';
+ 
+
+function setToken(userToken) {
+  sessionStorage.setItem('token', JSON.stringify(userToken));
+}
+
+function getToken() {
+}
 
 function App() {
-  const [token, setToken] = useState();
+  const token = getToken();
 
   if(!token) {
     return <Login setToken={setToken} />
   }
+
 
   return (
     <div className="wrapper">
