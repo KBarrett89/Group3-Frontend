@@ -1,9 +1,11 @@
 #mapbox{
     position: fixed;
-    height: 100mm;
-    width: 700px;
+    height: 125mm;
+    width: 100%;
     border: white;
-    left: 55%;
+    right: 1mm;
+    bottom: 10px;
+    
     
  }
  
