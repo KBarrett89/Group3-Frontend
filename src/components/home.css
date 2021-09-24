@@ -12,6 +12,30 @@
 
 #logPage{
     position: absolute;
-    left: 28%;
+    left: 23%;
 
+}
+#teamname{
+    
+    color:rgb(85, 255, 249) ;
+    font-size: 7mm;
+    font-family: Arial, Helvetica, sans-serif
+
+}
+#team{
+    position: fixed;
+    left: 5%;
+    top: 20px;
+    justify-content: center;
+    color:rgb(85, 255, 249) ;
+    font-size: 7mm;
+
+}
+#names{
+    position: fixed;
+   display: inline;
+    left: 5%;
+    top: 10%;
+    color:rgb(85, 255, 249) ;
+    font-size: 7mm;
 }
