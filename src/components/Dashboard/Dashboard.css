@@ -1,0 +1,24 @@
+#searchReg{
+    position: absolute;
+    left: 45%;
+    top: 25%;
+    align-items: center;
+    justify-content: center;
+    color:rgb(85, 255, 249) ;
+    font-size: 7mm;
+    font-family: Arial, Helvetica, sans-serifS;
+}
+
+#logOff{
+    position: absolute;
+    left: 2%;
+    top: 5%;
+    align-items: center;
+    justify-content: center;
+}
+
+#eg {
+font-size: 3mm;
+position: absolute;
+left: 28%;
+}
