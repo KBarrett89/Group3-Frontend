@@ -3,6 +3,8 @@ import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Dashboard from './components/Dashboard/Dashboard';
 import Login from './components/Login/Login';
+import Home from './components/Home/Home';
+import Results from './components/Location/Results'; 
  
 
 
@@ -25,11 +27,12 @@ function App() {
     <div className="wrapper">
       <h1>Application</h1>
       <BrowserRouter>
-        <Switch>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
-        </Switch>
+      <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/login" component={Login} />
+              <Route path="/dashboard" component={Dashboard} />
+              <Route path="/results/:search" component={Results} />
+            </Switch>
       </BrowserRouter>
     </div>
   );
