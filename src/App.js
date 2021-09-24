@@ -1,20 +1,15 @@
-import React, { useState } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Dashboard from './components/Dashboard/Dashboard';
 import Login from './components/Login/Login';
+import Home from './components/Home/Home';
+import Results from './components/Location/Results'; 
+import useToken from './useToken';
+import SiteNavbar from './components/NavBar/Navbar';
  
-
-function setToken(userToken) {
-  sessionStorage.setItem('token', JSON.stringify(userToken));
-}
-
-function getToken() {
-}
-
 function App() {
-  const token = getToken();
 
+  const { token, setToken } = useToken();
   if(!token) {
     return <Login setToken={setToken} />
   }
@@ -22,13 +17,14 @@ function App() {
 
   return (
     <div className="wrapper">
-      <h1>Application</h1>
+      <SiteNavbar />
       <BrowserRouter>
-        <Switch>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
-        </Switch>
+      <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/login" component={Login} />
+              <Route path="/dashboard" component={Dashboard} />
+              <Route path="/results/:search" component={Results} />
+            </Switch>
       </BrowserRouter>
     </div>
   );
