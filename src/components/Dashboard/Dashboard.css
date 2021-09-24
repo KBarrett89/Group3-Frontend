@@ -16,3 +16,9 @@
     align-items: center;
     justify-content: center;
 }
+
+#eg {
+font-size: 3mm;
+position: absolute;
+left: 28%;
+}
