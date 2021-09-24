@@ -5,7 +5,7 @@ function Dashboard(props) {
    const registration = useSearchInput('');
   
    
-   
+
 
  
   // handle click event of logout button
@@ -36,5 +36,7 @@ const useSearchInput = initialValue => {
         setValue(e.target.value);
       }
     }
+
+
  
 export default Dashboard;
