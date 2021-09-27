@@ -24,18 +24,24 @@
 }
 #team{
     position: fixed;
-    left: 5%;
-    top: 20px;
+    left: 45%;
+    top: 5px;
     justify-content: center;
     color:rgb(85, 255, 249) ;
-    font-size: 7mm;
+    font-size: 5mm;
 
 }
 #names{
     position: fixed;
-   display: inline;
-    left: 5%;
-    top: 10%;
+    word-spacing: 15mm;
+    left: 19.5%;
+    
+    top: 5%;
     color:rgb(85, 255, 249) ;
-    font-size: 7mm;
+    font-size: 5mm;
+}
+#nav{
+   display: inline;
+    font-size: 6mm;
+
 }

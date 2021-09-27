@@ -20,18 +20,18 @@ function Home(props) {
 <div id = 'teamname'>
   <p id = 'team'> Team Three </p>
   </div>
+
   <div id ='names'>
-  Danny Martin 
-  <br />
-  Katie Barrett 
-  <br />
-  Samuel Knapp 
-  <br />
-  Daryl Bishop 
-  <br />
-  Ryan Donaghue 
-  <br /> 
+  <h>DannyMartin   </h>
   
+  <h>KatieBarrett  </h>
+  
+  <h>SamuelKnapp   </h>
+
+  <h>DarylBishop   </h>
+  
+  <h> RyanDonaghue   </h>
+
 </div>
 </>
   );
