@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom'
 import './Dashboard.css';
-
+import Results from './Results';
 
 
  
