@@ -3,13 +3,13 @@ import LocationData from '../Location/LocationData.jsx'
 
 const ProfileRecord = ({ profileData, buttonClick }) => {
 
-    const locationData = profileData.locations.map((location, index) => {
-        return (
-            <LocationData
-                key={index}
-                location={location} />
-        )
-    })
+    // const locationData = profileData.sightingList.map((location, index) => {
+    //     return (
+    //         <LocationData
+    //             key={index}
+    //             location={location} />
+    //     )
+    // })
 
     return (
         <div>
@@ -23,11 +23,11 @@ const ProfileRecord = ({ profileData, buttonClick }) => {
                     <Accordion.Collapse eventKey="0">
                         <Card.Body>
                             <ListGroup>
-                                <ListGroup.Item><b>Registration Number:</b> {profileData.suspect.vehicleRegistrationNo}</ListGroup.Item>
-                                <ListGroup.Item><b>Registration Date:</b> {profileData.suspect.vehicleRegistrationDate}</ListGroup.Item>.
-                                <ListGroup.Item><b>Make:</b> {profileData.suspect.make}</ListGroup.Item>
-                                <ListGroup.Item><b>Model:</b> {profileData.suspect.model}</ListGroup.Item>
-                                <ListGroup.Item><b>Colour:</b> {profileData.suspect.colour}</ListGroup.Item>
+                                <ListGroup.Item><b>Registration Number:</b> {profileData.vehicle.vehicleRegistrationNO}</ListGroup.Item>
+                                <ListGroup.Item><b>Registration Date:</b> {profileData.vehicle.vehicleRegistrationDate}</ListGroup.Item>.
+                                <ListGroup.Item><b>Make:</b> {profileData.vehicle.make}</ListGroup.Item>
+                                <ListGroup.Item><b>Model:</b> {profileData.vehicle.model}</ListGroup.Item>
+                                <ListGroup.Item><b>Colour:</b> {profileData.vehicle.colour}</ListGroup.Item>
 
                             </ListGroup>
                         </Card.Body>
@@ -42,18 +42,19 @@ const ProfileRecord = ({ profileData, buttonClick }) => {
                     <Accordion.Collapse eventKey="1">
                         <Card.Body>
                             <ListGroup>
-                                <ListGroup.Item><b>Forename(s):</b> {profileData.suspect.forenames}</ListGroup.Item>
-                                <ListGroup.Item><b>Surname: </b>{profileData.suspect.surname}</ListGroup.Item>
-                                <ListGroup.Item><b>Address:</b> {profileData.suspect.address}</ListGroup.Item>
-                                <ListGroup.Item><b>Date of Birth:</b> {profileData.suspect.dateOfBirth}</ListGroup.Item>
-                                <ListGroup.Item><b>Place of Birth:</b> {profileData.suspect.placeOfBirth}</ListGroup.Item>
-                                <ListGroup.Item><b>Citizen ID:</b> {profileData.suspect.citizenID}</ListGroup.Item>
-                                <ListGroup.Item><b>Driving Licence ID:</b> {profileData.suspect.driverLicenceID}</ListGroup.Item>
+                                <ListGroup.Item><b>Forename(s):</b> {profileData.person.forenames}</ListGroup.Item>
+                                <ListGroup.Item><b>Surname: </b>{profileData.person.surname}</ListGroup.Item>
+                                <ListGroup.Item><b>Address:</b> {profileData.person.address}</ListGroup.Item>
+                                <ListGroup.Item><b>Date of Birth:</b> {profileData.person.dateOfBirth}</ListGroup.Item>
+                                <ListGroup.Item><b>Place of Birth:</b> {profileData.person.placeOfBirth}</ListGroup.Item>
+                                <ListGroup.Item><b>Citizen ID:</b> {profileData.person.citizenID}</ListGroup.Item>
+                                <ListGroup.Item><b>Driving Licence ID:</b> {profileData.person.driverLicenceID}</ListGroup.Item>
+                            
                             </ListGroup>
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>
-                <Card>
+                {/* <Card>
                     <Card.Header>
                         <Accordion.Toggle as={Card.Header} eventKey="2">
                             <h3>Location Data</h3>
@@ -76,9 +77,9 @@ const ProfileRecord = ({ profileData, buttonClick }) => {
                             </Table>
                             <Button variant="primary" size="lg" block onClick={buttonClick}>View on a map</Button>{' '}
                         </Card.Body>
-                    </Accordion.Collapse>
-                </Card>
-            </Accordion>
+                    </Accordion.Collapse>}
+                </Card> */
+                  }  </Accordion>
         </div>
     )
 }
