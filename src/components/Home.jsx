@@ -9,12 +9,31 @@ function Home(props) {
 
 
   return (
+    <>
     <div id = 'welcome'>
-      Lets Catch Some Bad Guys!
+      BAE12 Final Project
       <br />
+      
       <button id= "logPage" onClick={moveToLogin}>Go To Secure Login</button>
+  </div>
+    
+<div id = 'teamname'>
+  <p id = 'team'> Team Three </p>
+  </div>
+
+  <div id ='names'>
+  <h>DannyMartin   </h>
   
-    </div>
+  <h>KatieBarrett  </h>
+  
+  <h>SamuelKnapp   </h>
+
+  <h>DarylBishop   </h>
+  
+  <h> RyanDonaghue   </h>
+
+</div>
+</>
   );
 }
 

@@ -16,11 +16,7 @@ code {
   padding: 20px;
 }
  
-.header {
-  padding: 10px;
-  background: #edf2f4;
-  border-bottom: 1px solid #999;
-}
+
 .header a {
   color: #0072ff;
   text-decoration: none;
