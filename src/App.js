@@ -1,36 +1,33 @@
-import React from 'react';
-import { BrowserRouter, Switch, Route, } from 'react-router-dom';
- 
-import Home from './components/Home'
-import Login from './components/Login'
-import Dashboard from './components/Dashboard'
-import Results from './components/Results';
-import Navigation from './components/Navbar';
-
-
-
+import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Dashboard from './components/Dashboard/Dashboard';
+import Login from './components/Login/Login';
+import Home from './components/Home/Home';
+import Results from './components/Location/Results'; 
+import useToken from './useToken';
+import SiteNavbar from './components/NavBar/Navbar';
  
 function App() {
+
+  const { token, setToken } = useToken();
+  if(!token) {
+    return <Login setToken={setToken} />
+  }
+
+
   return (
-    <div className="App">
-      <Navigation/>
+    <div className="wrapper">
+      <SiteNavbar />
       <BrowserRouter>
-        <div>
-          <div className="header">
-          </div>
-          <div className="content">
-            <Switch>
+      <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/login" component={Login} />
               <Route path="/dashboard" component={Dashboard} />
               <Route path="/results/:search" component={Results} />
-              
             </Switch>
-          </div>
-        </div>
       </BrowserRouter>
     </div>
   );
 }
- 
+
 export default App;

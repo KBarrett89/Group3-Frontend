@@ -1,5 +1,5 @@
 import { Accordion, Card, ListGroup, Table, Button } from 'react-bootstrap'
-import LocationData from '../Location/LocationData'
+import LocationData from '../Location/LocationData.jsx'
 
 const ProfileRecord = ({ profileData, buttonClick }) => {
 

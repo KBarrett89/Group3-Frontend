@@ -3,8 +3,8 @@ import './Home.css';
  
 function Home(props) {
 
-    const moveToLogin = () => {
-        props.history.push('/login');
+    const moveToSearch = () => {
+        props.history.push('/dashboard');
     }
 
 
@@ -12,8 +12,10 @@ function Home(props) {
     <div id = 'welcome'>
       Lets Catch Some Bad Guys!
       <br />
-      <button id= "logPage" onClick={moveToLogin}>Go To Secure Login</button>
+      <button id= "logPage" onClick={moveToSearch}>Go To Secure Search</button>
   
     </div>
   );
 }
+
+export default Home
