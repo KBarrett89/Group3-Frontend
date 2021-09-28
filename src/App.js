@@ -6,6 +6,7 @@ import Home from './components/Home/Home';
 import Results from './components/Location/Results'; 
 import useToken from './useToken';
 import SiteNavbar from './components/Home/Navbar';
+import GetProfile from './components/Profiles/GetProfile';
  
 function App() {
 
@@ -22,6 +23,8 @@ function App() {
       <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/login" component={Login} />
+              <Route path="/GetProfile/:reg">
+                        <GetProfile/> </Route>
               <Route path="/dashboard" component={Dashboard} />
               <Route path="/results/:search" component={Results} />
             </Switch>
