@@ -3,7 +3,9 @@ import ProfileRecord from './ProfileRecord'
 import {useState, useEffect} from 'react'
 import { useParams } from 'react-router'
 import axios from 'axios'
+import '../Dashboard/Dashboard.css';
 import regSearch from '../Dashboard/Dashboard'
+
 
 
 const GetProfile = () => {
@@ -18,7 +20,7 @@ const GetProfile = () => {
     
 
     const getProfileData = () => {
-    axios.get(`http://localhost:8080/getVehicleRegByPlate/${reg}`)
+    axios.get(`http://54.76.136.203/getVehicleRegByPlate/${reg}`)
       .then(res => {
       const profileJSON = res.data
       console.log(profileJSON)
@@ -38,9 +40,11 @@ const GetProfile = () => {
     
     return (
       <>
+      <div id = "nameDisplay">
         {profileData && 
           <ProfileRecord profileData={profileData} buttonClick={buttonClick}/>
         }
+        </div>
       </>
   );
 }
