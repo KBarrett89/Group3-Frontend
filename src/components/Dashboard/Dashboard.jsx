@@ -31,7 +31,7 @@ function Dashboard(props) {
       
       <div id= 'searchReg'>
         Vehicle Registration<br />
-        <input type="text" value= {numberPlateSearch} onChange={e=>setNumberPlateSearch(e.target.value)} />
+        <input type="text" value= {regSearch} onChange={e=>setRegSearch(e.target.value)} />
         <button type="submit" onClick={handleSubmit}>Search</button>
         <br />
         <p id = "eg"> E.G - AB12 3CD</p>

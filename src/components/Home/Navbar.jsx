@@ -1,5 +1,5 @@
 import {Navbar, Nav} from 'react-bootstrap'
-import './home.css'
+import './Home.css'
 
 
 

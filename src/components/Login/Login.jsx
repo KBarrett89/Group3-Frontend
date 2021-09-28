@@ -26,9 +26,7 @@ async function loginUser(credentials) {
       setToken(token);
     }
 
-    const togglePassword = () => {
-      setPasswordShown(!passwordShown);
-    };
+
    
 
     return (
@@ -42,8 +40,7 @@ async function loginUser(credentials) {
           <label>
             <p>Password</p>
             <input type="password" onChange={e => setPassword(e.target.value)} />
-            <input type={passwordShown ? "text" : "password"} />
-        <button onClick={togglePassword}>Show</button>
+          
           </label>
           <div>
             <button type="submit">Submit</button>

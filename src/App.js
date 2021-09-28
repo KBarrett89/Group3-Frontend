@@ -5,7 +5,7 @@ import Login from './components/Login/Login';
 import Home from './components/Home/Home';
 import Results from './components/Location/Results'; 
 import useToken from './useToken';
-import SiteNavbar from './components/NavBar/Navbar';
+import SiteNavbar from './components/Home/Navbar';
  
 function App() {
 
