@@ -5,6 +5,7 @@ import { useParams } from 'react-router'
 import axios from 'axios'
 import '../Dashboard/Dashboard.css';
 import regSearch from '../Dashboard/Dashboard'
+import MapView from '../Location/MapView'
 
 
 
@@ -45,6 +46,7 @@ const GetProfile = () => {
           <ProfileRecord profileData={profileData} buttonClick={buttonClick}/>
         }
         </div>
+        <MapView/>
       </>
   );
 }

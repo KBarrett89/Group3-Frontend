@@ -2,6 +2,7 @@ import { Accordion, Card, ListGroup, Table, Button } from 'react-bootstrap'
 import LocationData from '../Location/LocationData.jsx'
 import '../Dashboard/Dashboard.css';
 
+
 const ProfileRecord = ({ profileData, buttonClick }) => {
 
     // const locationData = profileData.sightingList.map((location, index) => {
@@ -56,6 +57,8 @@ const ProfileRecord = ({ profileData, buttonClick }) => {
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>
+
+                
                 {/* <Card>
                     <Card.Header>
                         <Accordion.Toggle as={Card.Header} eventKey="2">
