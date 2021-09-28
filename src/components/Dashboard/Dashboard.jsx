@@ -8,23 +8,21 @@ import './Dashboard.css';
 function Dashboard(props) {
    
   
-    
-    const [numberPlateSearch, setNumberPlateSearch] = useState("")
-    const history = useHistory()
-
-    const handleSearch = (e) => {
-        e.preventDefault()
-        setNumberPlateSearch(e.target.value) 
-    }
-    const handleConfirm = () => {
-    history.push(/results/ + numberPlateSearch)
-
-  }
-
-  // handle click event of logout button
-  const handleLogout = () => {    
-    props.history.push('/');
-  }
+    const handleLogout = () => {    
+     props.history.push('/login');
+   }
+   const RegSearch = () => {
+ 
+     const [regSearch, setRegSearch] = useState("")
+     const history = useHistory()
+   
+     const handleSubmit = (e) => {
+         e.preventDefault()
+         setRegSearch(e.target.value)
+         history.push(/get-profile/ + RegSearch)
+     }
+ 
+ 
  
   return (
 
@@ -33,8 +31,8 @@ function Dashboard(props) {
       
       <div id= 'searchReg'>
         Vehicle Registration<br />
-        <input type="text" value= {numberPlateSearch} onChange={e=>setNumberPlateSearch(e.target.value)} />
-        <button type="submit" onClick={handleConfirm}>Search</button>
+        <input type="text" value= {regSearch} onChange={e=>setRegSearch(e.target.value)} />
+        <button type="submit" onClick={handleSubmit}>Search</button>
         <br />
         <p id = "eg"> E.G - AB12 3CD</p>
       </div>
@@ -45,6 +43,7 @@ function Dashboard(props) {
   
   );
   }
- 
+}
  
 export default Dashboard;
+  

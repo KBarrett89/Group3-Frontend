@@ -1,5 +1,5 @@
 import {Navbar, Nav} from 'react-bootstrap'
-import './home.css'
+import './Home.css'
 
 
 
@@ -14,9 +14,6 @@ const Navigation = () => {
           <Navbar.Collapse id="navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link href="/">Home</Nav.Link> 
-              <br/>
-              <br/>
-              <Nav.Link href="/login">Secure-Login</Nav.Link>
               <br/>
               <br/>
               <Nav.Link href="/dashboard">Dashboard</Nav.Link>

@@ -8,14 +8,35 @@ function Home(props) {
     }
 
 
-  return (
-    <div id = 'welcome'>
-      Lets Catch Some Bad Guys!
-      <br />
-      <button id= "logPage" onClick={moveToSearch}>Go To Secure Search</button>
-  
+    return (
+      <>
+      <div id = 'welcome'>
+        BAE12 Final Project
+        <br />
+        
+        <button id= "logPage" onClick={moveToSearch}>Go To Secure Search</button>
     </div>
-  );
-}
-
-export default Home
+      
+  <div id = 'teamname'>
+    <p id = 'team'> Team Three </p>
+    </div>
+  
+    <div id ='names'>
+    <h>DannyMartin   </h>
+    
+    <h>KatieBarrett  </h>
+    
+    <h>SamuelKnapp   </h>
+  
+    <h>DarylBishop   </h>
+    
+    <h> RyanDonaghue   </h>
+  
+  </div>
+  </>
+    );
+  }
+  
+  
+   
+  export default Home;

@@ -3,6 +3,7 @@ import ProfileRecord from './ProfileRecord'
 import {useState, useEffect} from 'react'
 import { useParams } from 'react-router'
 import axios from 'axios'
+import RegSearch from '../Dashboard/Dashboard'
 
 const GetProfile = () => {
 
@@ -15,7 +16,7 @@ const GetProfile = () => {
   useEffect(() => {
 
     const getProfileData = () => {
-    axios.get(`HTTP/getSuspect/${reg}`)
+    axios.get(`http://localhost:8080/getVehicleRegByPlate/${RegSearch}`)
       .then(res => {
       const profileJSON = res.data
       console.log(profileJSON)
