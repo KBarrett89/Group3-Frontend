@@ -33,7 +33,7 @@ const GetProfile = () => {
     }, [])
 
     const buttonClick = () => {
-      history.push("/map-view/" + reg)
+      history.push("/render-me-a-crim's-position/" + reg)
     }
     
     return (

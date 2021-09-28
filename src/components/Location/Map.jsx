@@ -1,26 +1,46 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import './map.css'
+import './Map.css'
 
-const Map= ()=> {
+const Map = ({profileData}) => {
+    const arrayOfLocations = profileData.sightingList
 
-const position = [51.505, -0.09]
+    const getLatLngBounds = () => {
+        const boundingArray = [];
+        {arrayOfLocations.map(singleLoc => (
+                boundingArray.push([singleLoc.latitude, singleLoc.longitude])
+            )
+        )}
+        return  [boundingArray];
+      } 
 
-return(
-  <>
-  <MapContainer id= "mapbox" center={position} zoom={13} scrollWheelZoom={false}>
-    <TileLayer
-      attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      const index = Math.random();
+      
 
-    />
-    <Marker position={position}>
-      <Popup>
-        A pretty CSS3 popup. <br /> Easily customizable.
-      </Popup>
-    </Marker>
-  </MapContainer>
-  </>
-)
+    return (
+        <>
+        
+        <MapContainer id="mapbox" bounds={getLatLngBounds()} scrollWheelZoom={true}>
+            <TileLayer
+                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
+                key={index}
+                {arrayOfLocations.map(singleLoc => (
+                  
+                    <Marker position={[singleLoc.latitude, singleLoc.longitude]}>
+                        <Popup position={[singleLoc.latitude, singleLoc.longitude]}>
+                      
+                        <div>
+                            <h4><b>Address:</b> <br></br> {singleLoc.streetName}</h4>
+                            <br></br>
+                            <h5><b>Timestamp:</b> <br></br> {singleLoc.timeStamp}</h5>
+                        </div>
+                        </Popup>
+                    </Marker>
+                ))}
+
+        </MapContainer>
+        </>
+    )
 }
 
-export default Map;
+export default Map
