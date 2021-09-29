@@ -22,15 +22,15 @@ function Home(props) {
     </div>
   
     <div id ='names'>
-    <h>DannyMartin   </h>
+    <h3>DannyMartin   </h3>
     
-    <h>KatieBarrett  </h>
+    <h3>KatieBarrett  </h3>
     
-    <h>SamuelKnapp   </h>
+    <h3>SamuelKnapp   </h3>
   
-    <h>DarylBishop   </h>
+    <h3>DarylBishop   </h3>
     
-    <h> RyanDonaghue   </h>
+    <h3> RyanDonaghue   </h3>
   
   </div>
   </>

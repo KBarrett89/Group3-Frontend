@@ -8,11 +8,18 @@ const Results = () => {
     const params = useParams()
     const reg = params.reg
     const [profileData,setData]= useState("")
+    const authToken = sessionStorage.getItem('token')
+    const userToken = JSON.parse(authToken)
+    const config = require('../../config/default.json');
+
+    console.log(userToken?.token)
     
     useEffect(() => {
 
         const getProfileData = () => {
-          axios.get(`http://54.76.136.203/getVehicleRegByPlate/${reg}`)
+            axios.get(`${config.baseUrl}/getVehicleRegByPlate/${reg}`, {
+                headers: {"Authorization" : `Bearer ${userToken?.token}`} 
+              })
           .then(res => {
           const profileJSON = res.data
           setData(profileJSON)

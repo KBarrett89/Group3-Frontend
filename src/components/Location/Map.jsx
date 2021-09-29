@@ -38,7 +38,7 @@ const Map = ({profileData}) => {
 
                 {Object.values(cameras).map(singleLoc => (
                   
-                    <Marker riseOnHover={true} position={[singleLoc.latitude, singleLoc.longitude]}>
+                    <Marker key={uuid()} riseOnHover={true} position={[singleLoc.latitude, singleLoc.longitude]}>
                         <Popup autoClose={false} position={[singleLoc.latitude, singleLoc.longitude]}>                      
                         <div>
                             <h4><b>Address:</b> <br></br> {singleLoc.streetName}</h4>
