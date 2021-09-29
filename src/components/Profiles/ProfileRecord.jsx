@@ -5,13 +5,13 @@ import '../Dashboard/Dashboard.css';
 
 const ProfileRecord = ({ profileData, buttonClick }) => {
 
-    // const locationData = profileData.sightingList.map((location, index) => {
-    //     return (
-    //         <LocationData
-    //             key={index}
-    //             location={location} />
-    //     )
-    // })
+    const locationData = profileData.sightingList.map((location, index) => {
+        return (
+            <LocationData
+                key={index}
+                location={location} />
+        )
+    })
 
     return (
         <div>
@@ -26,7 +26,7 @@ const ProfileRecord = ({ profileData, buttonClick }) => {
                         <Card.Body>
                             <ListGroup>
                                 <ListGroup.Item><b>Registration Number:</b> {profileData.vehicle.vehicleRegistrationNO}</ListGroup.Item>
-                                <ListGroup.Item><b>Registration Date:</b> {profileData.vehicle.vehicleRegistrationDate}</ListGroup.Item>.
+                                <ListGroup.Item><b>Registration Date:</b> {profileData.vehicle.registrationDate}</ListGroup.Item>.
                                 <ListGroup.Item><b>Make:</b> {profileData.vehicle.make}</ListGroup.Item>
                                 <ListGroup.Item><b>Model:</b> {profileData.vehicle.model}</ListGroup.Item>
                                 <ListGroup.Item><b>Colour:</b> {profileData.vehicle.colour}</ListGroup.Item>
@@ -45,21 +45,21 @@ const ProfileRecord = ({ profileData, buttonClick }) => {
                     <Accordion.Collapse eventKey="1">
                         <Card.Body>
                             <ListGroup>
-                                <ListGroup.Item><b>Forename(s):</b> {profileData.person.forenames}</ListGroup.Item>
+                                <ListGroup.Item><b>Forename(s):</b> {profileData.person.forename}</ListGroup.Item>
                                 <ListGroup.Item><b>Surname: </b>{profileData.person.surname}</ListGroup.Item>
                                 <ListGroup.Item><b>Address:</b> {profileData.person.address}</ListGroup.Item>
                                 <ListGroup.Item><b>Date of Birth:</b> {profileData.person.dateOfBirth}</ListGroup.Item>
                                 <ListGroup.Item><b>Place of Birth:</b> {profileData.person.placeOfBirth}</ListGroup.Item>
                                 <ListGroup.Item><b>Citizen ID:</b> {profileData.person.citizenID}</ListGroup.Item>
                                 <ListGroup.Item><b>Driving Licence ID:</b> {profileData.person.driverLicenceID}</ListGroup.Item>
+                                <ListGroup.Item><b>Phone Number:</b> {profileData.person.phoneNumber}</ListGroup.Item>
                             
                             </ListGroup>
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>
+                 <Card>
 
-                
-                {/* <Card>
                     <Card.Header>
                         <Accordion.Toggle as={Card.Header} eventKey="2">
                             <h3>Location Data</h3>
@@ -82,9 +82,9 @@ const ProfileRecord = ({ profileData, buttonClick }) => {
                             </Table>
                             <Button variant="primary" size="lg" block onClick={buttonClick}>View on a map</Button>{' '}
                         </Card.Body>
-                    </Accordion.Collapse>}
-                </Card> */
-                  }  </Accordion>
+                    </Accordion.Collapse>
+                </Card>
+                   </Accordion>
         </div>
     )
 }

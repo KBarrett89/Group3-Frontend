@@ -26,7 +26,9 @@ function App() {
               <Route path="/GetProfile/:reg">
                         <GetProfile/> </Route>
               <Route path="/dashboard" component={Dashboard} />
-              <Route path="/results/:search" component={Results} />
+              <Route path="/render-me-a-crim's-position/:reg">
+                        <Results/>
+                    </Route>
             </Switch>
       </BrowserRouter>
     </div>
