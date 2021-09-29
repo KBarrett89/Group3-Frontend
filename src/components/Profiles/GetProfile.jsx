@@ -27,13 +27,11 @@ const GetProfile = () => {
         withCredentials:true 
       })  
       .then(res => {
-        debugger
       const profileJSON = res.data
       console.log(profileJSON)
       setData(profileJSON)
       })
       .catch(err => {
-        debugger
         console.log(err)
         history.push("/page-not-found")
       })
