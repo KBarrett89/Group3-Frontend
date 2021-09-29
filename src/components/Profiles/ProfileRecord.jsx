@@ -49,6 +49,7 @@ const ProfileRecord = ({ profileData, buttonClick }) => {
                                 <ListGroup.Item><b>Place of Birth:</b> {profileData.person.placeOfBirth}</ListGroup.Item>
                                 <ListGroup.Item><b>Citizen ID:</b> {profileData.person.citizenID}</ListGroup.Item>
                                 <ListGroup.Item><b>Driving Licence ID:</b> {profileData.person.driverLicenceID}</ListGroup.Item>
+                                <ListGroup.Item><b>Phone Number:</b> {profileData.person.phoneNumber}</ListGroup.Item>
                             
                             </ListGroup>
                         </Card.Body>
