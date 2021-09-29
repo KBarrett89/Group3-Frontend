@@ -15,16 +15,16 @@ const GetProfile = () => {
   const reg = params.reg
   const history = useHistory()
   const authToken = sessionStorage.getItem('token')
-    const userToken = JSON.parse(authToken)
-
+  const userToken = JSON.parse(authToken)
+  const config = require('../../config/default.json');
 
   useEffect(() => {
     
 
     const getProfileData = () => {
-      axios.get(`http://localhost:8080/getVehicleRegByPlate/${reg}`, {
+      axios.get(`http://${config.baseUrl}/getVehicleRegByPlate/${reg}`, {
         headers: {"Authorization" : `Bearer ${userToken?.token}`},
-        withCredentials:true
+        withCredentials:true 
       })  
       .then(res => {
         debugger

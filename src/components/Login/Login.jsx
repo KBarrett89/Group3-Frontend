@@ -3,7 +3,8 @@ import './Login.css';
 import PropTypes from 'prop-types';
 
 async function loginUser(credentials) {
-    return fetch('http://localhost:8080/authenticate',  {
+    const config = require('../../config/default.json');
+    return fetch(`http://${config.baseUrl}/authenticate`, {
       method: 'POST',
       credentials:'include',
       mode:'cors',
