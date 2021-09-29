@@ -1,5 +1,8 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import './Map.css'
+import uuid from 'react-uuid'
+
+
 
 const Map = ({profileData}) => {
     const arrayOfLocations = profileData.sightingList
@@ -11,22 +14,22 @@ const Map = ({profileData}) => {
             )
         )}
         return  [boundingArray];
+
       } 
 
-      const index = Math.random();
-      
-
+  
     return (
         <>
         
+        
         <MapContainer id="mapbox" bounds={getLatLngBounds()} scrollWheelZoom={true}>
+        
             <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
-                key={index}
                 {arrayOfLocations.map(singleLoc => (
-                  
-                    <Marker position={[singleLoc.latitude, singleLoc.longitude]}>
+                    <Marker key={uuid()} position={[singleLoc.latitude, singleLoc.longitude]}>
+                    
                         <Popup position={[singleLoc.latitude, singleLoc.longitude]}>
                       
                         <div>
@@ -34,6 +37,7 @@ const Map = ({profileData}) => {
                             <br></br>
                             <h5><b>Timestamp:</b> <br></br> {singleLoc.timeStamp}</h5>
                         </div>
+
                         </Popup>
                     </Marker>
                 ))}

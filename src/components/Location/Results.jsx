@@ -22,6 +22,7 @@ const Results = () => {
         getProfileData()
         }, [])
 
+        
     return (
         <div>
             {profileData && 
