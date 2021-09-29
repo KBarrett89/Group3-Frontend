@@ -9,7 +9,7 @@ const Navigation = () => {
         <div id = "nav">
         <Navbar className="navbar" fixed="bottom">
 
-          <Navbar.Brand href="">Navbar</Navbar.Brand>
+          
           <Navbar.Toggle aria-controls="navbar-nav" />
           <Navbar.Collapse id="navbar-nav">
             <Nav className="mr-auto">

@@ -1,5 +1,7 @@
 import { Accordion, Card, ListGroup, Table, Button } from 'react-bootstrap'
 import LocationData from '../Location/LocationData.jsx'
+import '../Dashboard/Dashboard.css';
+
 
 const ProfileRecord = ({ profileData, buttonClick }) => {
 
@@ -14,7 +16,7 @@ const ProfileRecord = ({ profileData, buttonClick }) => {
     return (
         <div>
             <Accordion defaultActiveKey="0">
-                <Card>
+                <Card id = "vinfo">
                     <Card.Header>
                         <Accordion.Toggle as={Card.Header} eventKey="0">
                             <h3>Vehicle Information</h3>
@@ -33,7 +35,8 @@ const ProfileRecord = ({ profileData, buttonClick }) => {
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>
-                <Card>
+                <br/>
+                <Card id = "pinfo">
                     <Card.Header>
                         <Accordion.Toggle as={Card.Header} eventKey="1">
                             <h3>Person Information</h3>
@@ -56,6 +59,7 @@ const ProfileRecord = ({ profileData, buttonClick }) => {
                     </Accordion.Collapse>
                 </Card>
                  <Card>
+
                     <Card.Header>
                         <Accordion.Toggle as={Card.Header} eventKey="2">
                             <h3>Location Data</h3>

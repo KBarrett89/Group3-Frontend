@@ -22,3 +22,22 @@ font-size: 3mm;
 position: absolute;
 left: 28%;
 }
+
+#vinfo{
+    font-size: 5mm;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    position: absolute;
+    left: 25%;
+    top: 10%;
+}
+
+#pinfo{
+    font-size: 5mm;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    position: absolute;
+    left: 45%;
+    top: 10%;
+    
+}

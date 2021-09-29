@@ -24,7 +24,7 @@ import './Dashboard.css';
   return (
 
     <div id='searchBar'>
-      Search <br /><br />
+       <br /><br />
       <div id= 'searchReg'>
         Vehicle Registration<br />
         <input type="text" value= {regSearch} onChange={e=>handleSubmit(e.target.value)} />
