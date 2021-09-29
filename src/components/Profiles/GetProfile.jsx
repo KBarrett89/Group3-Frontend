@@ -4,8 +4,7 @@ import {useState, useEffect} from 'react'
 import { useParams } from 'react-router'
 import axios from 'axios'
 import '../Dashboard/Dashboard.css';
-import regSearch from '../Dashboard/Dashboard'
-import MapView from '../Location/MapView'
+import Results from '../Location/Results.jsx'
 
 
 
@@ -15,13 +14,17 @@ const GetProfile = () => {
   const params = useParams()
   const reg = params.reg
   const history = useHistory()
+  const authToken = sessionStorage.getItem('token')
+  const userToken = JSON.parse(authToken)
 
 
   useEffect(() => {
     
 
     const getProfileData = () => {
-    axios.get(`http://54.76.136.203/getVehicleRegByPlate/${reg}`)
+      axios.get(`http://localhost:8080/getVehicleRegByPlate/${reg}`, {
+        headers: {"Authorization" : `Bearer ${userToken?.token}`} 
+      })  
       .then(res => {
       const profileJSON = res.data
       console.log(profileJSON)
@@ -46,7 +49,7 @@ const GetProfile = () => {
           <ProfileRecord profileData={profileData} buttonClick={buttonClick}/>
         }
         </div>
-        <MapView/>
+        <Results/>
       </>
   );
 }
