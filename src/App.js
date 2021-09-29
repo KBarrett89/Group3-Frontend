@@ -27,10 +27,11 @@ function App() {
               <Route path="/GetProfile/:reg">
                         <GetProfile/> </Route>
               <Route path="/dashboard" component={Dashboard} />
+              <Route path="/page-not-found" component={PageNotFound} />
               <Route path="/render-me-a-crim's-position/:reg">
                         <Results/>
                         </Route>
-                 <Route path="/page-not-found" component={PageNotFound} />      
+                       
                     
             </Switch>
       </BrowserRouter>

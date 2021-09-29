@@ -48,5 +48,10 @@
     font-size: 6mm;
     left: 2.5%;
     top: 5mm;
+    z-index: 3;
 
+}
+
+#hyper:visited{
+    color: white;
 }
