@@ -15,7 +15,7 @@ const GetProfile = () => {
   const reg = params.reg
   const history = useHistory()
   const authToken = sessionStorage.getItem('token')
-  const userToken = JSON.parse(authToken)
+    const userToken = JSON.parse(authToken)
 
 
   useEffect(() => {
@@ -23,14 +23,17 @@ const GetProfile = () => {
 
     const getProfileData = () => {
       axios.get(`http://localhost:8080/getVehicleRegByPlate/${reg}`, {
-        headers: {"Authorization" : `Bearer ${userToken?.token}`} 
+        headers: {"Authorization" : `Bearer ${userToken?.token}`},
+        withCredentials:true
       })  
       .then(res => {
+        debugger
       const profileJSON = res.data
       console.log(profileJSON)
       setData(profileJSON)
       })
       .catch(err => {
+        debugger
         console.log(err)
         history.push("/page-not-found")
       })
