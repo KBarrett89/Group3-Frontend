@@ -12,7 +12,7 @@ const Results = () => {
     useEffect(() => {
 
         const getProfileData = () => {
-          axios.get(`http://localhost:8080/getVehicleRegByPlate/${reg}`)
+          axios.get(`http://54.76.136.203/getVehicleRegByPlate/${reg}`)
           .then(res => {
           const profileJSON = res.data
           setData(profileJSON)
