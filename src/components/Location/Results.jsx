@@ -17,7 +17,7 @@ const Results = () => {
     useEffect(() => {
 
         const getProfileData = () => {
-            axios.get(`http://${config.baseUrl}/getVehicleRegByPlate/${reg}`, {
+            axios.get(`${config.baseUrl}/getVehicleRegByPlate/${reg}`, {
                 headers: {"Authorization" : `Bearer ${userToken?.token}`} 
               })
           .then(res => {
