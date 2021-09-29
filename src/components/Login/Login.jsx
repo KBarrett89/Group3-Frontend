@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 async function loginUser(credentials) {
     const config = require('../../config/default.json');
-    return fetch(`http://${config.baseUrl}/authenticate`, {
+    return fetch(`${config.baseUrl}/authenticate`, {
       method: 'POST',
       credentials:'include',
       mode:'cors',

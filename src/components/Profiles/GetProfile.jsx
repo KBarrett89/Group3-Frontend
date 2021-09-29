@@ -22,7 +22,7 @@ const GetProfile = () => {
     
 
     const getProfileData = () => {
-      axios.get(`http://${config.baseUrl}/getVehicleRegByPlate/${reg}`, {
+      axios.get(`${config.baseUrl}/getVehicleRegByPlate/${reg}`, {
         headers: {"Authorization" : `Bearer ${userToken?.token}`},
         withCredentials:true 
       })  
