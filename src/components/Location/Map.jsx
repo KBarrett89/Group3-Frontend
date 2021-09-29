@@ -1,5 +1,5 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import './Map.css'
+import './map.css'
 
 const Map = ({profileData}) => {
     const arrayOfLocations = profileData.sightingList
@@ -13,8 +13,17 @@ const Map = ({profileData}) => {
         return  [boundingArray];
       } 
 
-      const index = Math.random();
-      
+    var cameras = {};
+
+    arrayOfLocations.forEach(singleLoc => {
+        if(cameras[[singleLoc.latitude, singleLoc.longitude]] == null){
+            cameras[[singleLoc.latitude, singleLoc.longitude]] = singleLoc;
+        }else {
+            cameras[[singleLoc.latitude, singleLoc.longitude]].timeStamp += '\r\n' + singleLoc.timeStamp;
+        }
+    });
+
+    console.log(cameras);
 
     return (
         <>
@@ -23,16 +32,15 @@ const Map = ({profileData}) => {
             <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
-                key={index}
-                {arrayOfLocations.map(singleLoc => (
+                {Object.values(cameras).map(singleLoc => (
                   
-                    <Marker position={[singleLoc.latitude, singleLoc.longitude]}>
-                        <Popup position={[singleLoc.latitude, singleLoc.longitude]}>
+                    <Marker riseOnHover={true} position={[singleLoc.latitude, singleLoc.longitude]}>
+                        <Popup autoClose={false} position={[singleLoc.latitude, singleLoc.longitude]}>
                       
                         <div>
                             <h4><b>Address:</b> <br></br> {singleLoc.streetName}</h4>
                             <br></br>
-                            <h5><b>Timestamp:</b> <br></br> {singleLoc.timeStamp}</h5>
+                            <h5><b>Timestamps:</b> <br></br> {singleLoc.timeStamp}</h5>
                         </div>
                         </Popup>
                     </Marker>

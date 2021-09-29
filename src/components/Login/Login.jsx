@@ -3,7 +3,7 @@ import './Login.css';
 import PropTypes from 'prop-types';
 
 async function loginUser(credentials) {
-    return fetch('http://localhost:8080/authenticate', {
+    return fetch('http://54.76.136.203/authenticate', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
