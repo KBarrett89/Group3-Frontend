@@ -1,4 +1,4 @@
-import { Accordion, Card, ListGroup, Table, Button } from 'react-bootstrap'
+import { Accordion, Card, ListGroup, Table } from 'react-bootstrap'
 import LocationData from '../Location/LocationData.jsx'
 import '../Dashboard/Dashboard.css';
 
@@ -26,7 +26,7 @@ const ProfileRecord = ({ profileData, buttonClick }) => {
                         <Card.Body>
                             <ListGroup>
                                 <ListGroup.Item><b>Registration Number:</b> {profileData.vehicle.vehicleRegistrationNO}</ListGroup.Item>
-                                <ListGroup.Item><b>Registration Date:</b> {profileData.vehicle.registrationDate}</ListGroup.Item>.
+                                <ListGroup.Item><b>Registration Date:</b> {profileData.vehicle.registrationDate}</ListGroup.Item>
                                 <ListGroup.Item><b>Make:</b> {profileData.vehicle.make}</ListGroup.Item>
                                 <ListGroup.Item><b>Model:</b> {profileData.vehicle.model}</ListGroup.Item>
                                 <ListGroup.Item><b>Colour:</b> {profileData.vehicle.colour}</ListGroup.Item>
@@ -58,7 +58,7 @@ const ProfileRecord = ({ profileData, buttonClick }) => {
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>
-                 <Card>
+                 <Card id = "timeloc">
 
                     <Card.Header>
                         <Accordion.Toggle as={Card.Header} eventKey="2">
@@ -72,15 +72,14 @@ const ProfileRecord = ({ profileData, buttonClick }) => {
                                     <tr>
                                         <th>Time</th>
                                         <th>Location</th>
-                                        <th>Latitude</th>
-                                        <th>Longitude</th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {locationData}
                                 </tbody>
                             </Table>
-                            <Button variant="primary" size="lg" block onClick={buttonClick}>View on a map</Button>{' '}
+                            
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>

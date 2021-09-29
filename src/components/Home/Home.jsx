@@ -30,7 +30,7 @@ function Home(props) {
   
     <h>DarylBishop   </h>
     
-    <h> RyanDonaghue   </h>
+    <h>RyanDonaghue   </h>
   
   </div>
   </>

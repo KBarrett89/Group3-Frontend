@@ -1,10 +1,10 @@
 #mapbox{
-    position: fixed;
-    height: 125mm;
-    width: 100%;
+    position: absolute;
+    height: 250mm;
+    width: 65%;
     border: white;
-    right: 1mm;
-    bottom: 10px;
-    
+    right: 10mm;
+    top: 110mm;
+    margin: auto;
     
  }

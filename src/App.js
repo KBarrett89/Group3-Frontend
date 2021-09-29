@@ -7,6 +7,7 @@ import Results from './components/Location/Results';
 import useToken from './useToken';
 import SiteNavbar from './components/Home/Navbar';
 import GetProfile from './components/Profiles/GetProfile';
+import PageNotFound from './components/Dashboard/PageNotFound';
  
 function App() {
 
@@ -28,7 +29,9 @@ function App() {
               <Route path="/dashboard" component={Dashboard} />
               <Route path="/render-me-a-crim's-position/:reg">
                         <Results/>
-                    </Route>
+                        </Route>
+                 <Route path="/page-not-found" component={PageNotFound} />      
+                    
             </Switch>
       </BrowserRouter>
     </div>

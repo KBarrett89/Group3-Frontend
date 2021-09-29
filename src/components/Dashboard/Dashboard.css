@@ -1,7 +1,7 @@
 #searchReg{
     position: absolute;
-    left: 45%;
-    top: 25%;
+    left: 38%;
+    top: 35%;
     align-items: center;
     justify-content: center;
     color:rgb(85, 255, 249) ;
@@ -40,4 +40,22 @@ left: 28%;
     left: 45%;
     top: 10%;
     
+}
+
+#timeloc{
+    
+    position: relative;
+    color: black;
+    font-size: 3.25mm;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 30%;
+    top: 100mm;
+    background-color:white;
+    
+    
+}
+/* button*/
+#showdata{
+    position: fixed;
+    top: 1mm;
 }
