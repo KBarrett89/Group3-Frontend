@@ -1,25 +1,56 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom'
 import './Dashboard.css';
-
-
-
+import axios from 'axios'
+import { waitFor } from '@testing-library/react';
 
 
 
   const RegSearch = () => {
+  const [data, setData] = useState("")
+  const [regSearch, setRegSearch] = useState("")
+  const history = useHistory()
+  const authToken = sessionStorage.getItem('token')
+  const userToken = JSON.parse(authToken)
+  const config = require('../../config/default.json');
 
-    const [regSearch, setRegSearch] = useState("")
-    const history = useHistory()
 
     const handleSubmit = (value) => {
         setRegSearch(value) 
         console.log(regSearch);
     }
 
-    const handleClick = () => {
-        history.push(/GetProfile/ + regSearch)
-    }
+    const handleClick = async () => {
+        //history.push(/GetProfile/ + regSearch)
+
+        const res = async () => {await axios.get(`${config.baseUrl}/getVehicleRegByPlate/${regSearch}`, {
+          headers: {"Authorization" : `Bearer ${userToken?.token}`},
+          withCredentials:true 
+        })  
+        .then(res => {
+        const profileJSON = res.data
+        console.log(profileJSON)
+        setData(profileJSON)
+        
+        if(Object.keys(profileJSON).length !== 0){
+
+          history.push(/GetProfile/ + regSearch)
+      
+        }
+        else { 
+          console.log("failed")
+        }
+        
+        })
+        .catch(err => {
+          console.log(err)
+          history.push("/page-not-found")
+        })
+        }
+       
+        await res();
+
+  }
   
  
   return (

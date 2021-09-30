@@ -11,6 +11,7 @@ const Map = ({profileData}) => {
                 boundingArray.push([singleLoc.latitude, singleLoc.longitude])
             )
         )}
+        if (arrayOfLocations.length === 0) boundingArray.push([51.84, 2.17], [52.5, -2])
         return  [boundingArray];
       } 
 

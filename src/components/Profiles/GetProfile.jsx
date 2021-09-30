@@ -8,9 +8,7 @@ import Results from '../Location/Results.jsx'
 
 
 
-
 const GetProfile = () => {
-  
 
   const [profileData,setData]= useState("")
   const params = useParams()
@@ -25,14 +23,12 @@ const GetProfile = () => {
 
     const getProfileData = () => {
       axios.get(`${config.baseUrl}/getVehicleRegByPlate/${reg}`, {
-        headers: {"Authorization" : `Bearer ${userToken?.token}`},
-        withCredentials:true 
+        headers: {"Authorization" : `Bearer ${userToken?.token}`} 
       })  
       .then(res => {
-      const profileJSON = res.data
-      console.log(profileJSON)
-      setData(profileJSON)
-      
+        const profileJSON = res.data
+        console.log(profileJSON)
+        setData(profileJSON)
       })
       .catch(err => {
         console.log(err)
@@ -41,9 +37,6 @@ const GetProfile = () => {
     }
     getProfileData()
     }, [])
-    if (profileData === 0){
-      history.push("/page-not-found")
-    }
 
     const buttonClick = () => {
       history.push("/render-me-a-crim's-position/" + reg)
@@ -54,11 +47,9 @@ const GetProfile = () => {
       <div id = "nameDisplay">
         {profileData && 
           <ProfileRecord profileData={profileData} buttonClick={buttonClick}/>
-            
         }
         </div>
         <Results/>
-        
       </>
   );
 }

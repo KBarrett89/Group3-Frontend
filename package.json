@@ -10,6 +10,7 @@
     "babel": "^6.23.0",
     "bootstrap": "^3.4.1",
     "config": "^3.3.6",
+    "jwt-decode": "^3.1.2",
     "leaflet": "^1.7.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.4",
@@ -20,6 +21,8 @@
     "react-scroll-wheel-handler": "^2.1.0",
     "react-uuid": "^1.0.2",
     "save": "^2.4.0",
+    "sleep-promise": "^9.1.0",
+    "sweetalert": "^2.1.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
