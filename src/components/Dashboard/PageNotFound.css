@@ -1,0 +1,22 @@
+#error{
+    position: fixed;
+    background-image: url(./404background.png);
+    background-repeat: no-repeat;
+    top:0mm;
+}
+
+#em{
+    font-size: 100mm;
+    color: white;
+    position: relative;
+    left: 950px;
+    top: 5px;
+    
+}
+#mess{
+    top: 70%;
+    color: white;
+    position: fixed;
+    left: 950px;
+    font-size: 8mm;
+}

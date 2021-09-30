@@ -1,6 +1,6 @@
 #welcome{
     position: absolute;
-    left: 40%;
+    left: 38%;
     top: 30%;
     align-items: center;
     justify-content: center;
@@ -12,7 +12,8 @@
 
 #logPage{
     position: absolute;
-    left: 20%;
+    left: 15%;
+    top: 35mm;
 
 }
 #teamname{
@@ -24,7 +25,7 @@
 }
 #team{
     position: fixed;
-    left: 45%;
+    left: 42%;
     top: 5px;
     justify-content: center;
     color:rgb(85, 255, 249) ;
@@ -35,7 +36,7 @@
     position: fixed;
     word-spacing: 15mm;
     left: 25%;
-    
+   display: inline;
     top: 5%;
     color:rgb(85, 255, 249) ;
     font-size: 5mm;
@@ -46,5 +47,11 @@
    display: inline;
     font-size: 6mm;
     left: 2.5%;
+    top: 5mm;
+    z-index: 3;
 
+}
+
+#hyper:visited{
+    color: rgb(85, 255, 249);
 }

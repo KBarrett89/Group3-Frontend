@@ -7,6 +7,7 @@ import Results from './components/Location/Results';
 import useToken from './useToken';
 import SiteNavbar from './components/Home/Navbar';
 import GetProfile from './components/Profiles/GetProfile';
+import PageNotFound from './components/Dashboard/PageNotFound';
 import { Button } from 'react-bootstrap'
 import { useHistory } from 'react-router';
 import axios from 'axios';
@@ -53,9 +54,12 @@ function App() {
               <Route path="/GetProfile/:reg">
                         <GetProfile/> </Route>
               <Route path="/dashboard" component={Dashboard} />
+              <Route path="/page-not-found" component={PageNotFound} />
               <Route path="/render-me-a-crim's-position/:reg">
                         <Results/>
-                    </Route>
+                        </Route>
+                       
+                    
             </Switch>
       </BrowserRouter>
 
