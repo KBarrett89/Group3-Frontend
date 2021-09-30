@@ -62,7 +62,7 @@ const ProfileRecord = ({ profileData, buttonClick }) => {
 
                     <Card.Header>
                         <Accordion.Toggle as={Card.Header} eventKey="2">
-                            <h3>Location Data</h3>
+                            <h3 id = "LD" ><br/>Location Data</h3>
                         </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="2">
@@ -71,6 +71,7 @@ const ProfileRecord = ({ profileData, buttonClick }) => {
                                 <thead>
                                     <tr>
                                         <th>Time</th>
+                                  
                                         <th>Location</th>
                                         
                                     </tr>
