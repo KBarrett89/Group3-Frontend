@@ -11,6 +11,7 @@ import PageNotFound from './components/Dashboard/PageNotFound';
 import { Button } from 'react-bootstrap'
 import { useHistory } from 'react-router';
 import axios from 'axios';
+import ListenLogout from './components/Auth/Verify-Token';
 
  
 function App() {
@@ -41,6 +42,7 @@ function App() {
     
   }
     
+  
     
   
 
@@ -48,6 +50,7 @@ function App() {
     <div className="wrapper">
       <SiteNavbar />
       <BrowserRouter>
+      <ListenLogout />
       <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/login" component={Login} />
@@ -59,12 +62,11 @@ function App() {
                         <Results/>
                         </Route>
                        
-                    
             </Switch>
       </BrowserRouter>
 
       <Button id="logout" variant="primary" size="lg" block onClick={handleLogout}>Logout</Button>{' '}
-
+      
     </div>
   );
 }

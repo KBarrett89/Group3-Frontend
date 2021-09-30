@@ -32,6 +32,15 @@ import { waitFor } from '@testing-library/react';
         console.log(profileJSON)
         setData(profileJSON)
         
+        if(Object.keys(profileJSON).length !== 0){
+
+          history.push(/GetProfile/ + regSearch)
+      
+        }
+        else { 
+          console.log("failed")
+        }
+        
         })
         .catch(err => {
           console.log(err)
@@ -40,24 +49,6 @@ import { waitFor } from '@testing-library/react';
         }
        
         await res();
-
-        const sleep = require('sleep-promise');
-        while(data === null){
-          sleep(10);
-        }
-        
-        console.log(data)
-
-        if(data.sightingList && data.sightingList.length !== 0){
-
-          history.push(/GetProfile/ + regSearch)
-      
-        }
-        else { 
-          console.log("failed")
-        }
-
-        
 
   }
   
