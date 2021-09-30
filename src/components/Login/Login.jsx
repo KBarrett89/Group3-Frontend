@@ -27,10 +27,9 @@ async function loginUser(credentials) {
         password
       });
       setToken(token);
+      window.location.href = '/';
     }
 
-
-   
 
     return (
       <div id='LoginBar'>
@@ -46,7 +45,7 @@ async function loginUser(credentials) {
           
           </label>
           <div>
-            <button type="submit">Submit</button>
+            <button type="submit" >Submit</button>
           </div>
         </form>
         </div>

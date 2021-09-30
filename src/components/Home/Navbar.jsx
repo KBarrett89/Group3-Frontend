@@ -1,10 +1,13 @@
 import {Navbar, Nav} from 'react-bootstrap'
 import './Home.css'
+import token from '../../useToken';
+
 
 
 
 const Navigation = () => {
 
+    
     return (
         <div id = "nav">
         <Navbar className="navbar" fixed="bottom">
@@ -18,6 +21,8 @@ const Navigation = () => {
               <br/>
               <Nav.Link href="/dashboard">Dashboard</Nav.Link>
             </Nav>
+
+
 
           </Navbar.Collapse>
         </Navbar>      
