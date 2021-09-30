@@ -41,9 +41,8 @@ const GetProfile = () => {
     }
     getProfileData()
     }, [])
-    if (profileData === 0){
-      history.push("/page-not-found")
-    }
+    
+    
 
     const buttonClick = () => {
       history.push("/render-me-a-crim's-position/" + reg)
