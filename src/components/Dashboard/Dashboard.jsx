@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom'
 import './Dashboard.css';
 import axios from 'axios'
+import { waitFor } from '@testing-library/react';
 
 
 
@@ -19,11 +20,10 @@ import axios from 'axios'
         console.log(regSearch);
     }
 
-    const handleClick = () => {
+    const handleClick = async () => {
         //history.push(/GetProfile/ + regSearch)
 
-        const request = () => {
-          axios.get(`${config.baseUrl}/getVehicleRegByPlate/${regSearch}`, {
+        const res = async () => {await axios.get(`${config.baseUrl}/getVehicleRegByPlate/${regSearch}`, {
           headers: {"Authorization" : `Bearer ${userToken?.token}`},
           withCredentials:true 
         })  
@@ -36,19 +36,28 @@ import axios from 'axios'
         .catch(err => {
           console.log(err)
           history.push("/page-not-found")
-        })}
-        request().then(res=>{
+        })
+        }
+       
+        await res();
 
-
-        console.log(data)
-      if(res.sightingList && res.sightingList.length !== 0){
-
-        history.push(/GetProfile/ + regSearch)
-      
-      }else { 
+        const sleep = require('sleep-promise');
+        while(data === null){
+          sleep(10);
+        }
         
-      }
-    }
+        console.log(data)
+
+        if(data.sightingList && data.sightingList.length !== 0){
+
+          history.push(/GetProfile/ + regSearch)
+      
+        }
+        else { 
+          console.log("failed")
+        }
+
+        
 
   }
   
