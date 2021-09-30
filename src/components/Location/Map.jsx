@@ -21,7 +21,7 @@ const Map = ({profileData}) => {
         if(cameras[[singleLoc.latitude, singleLoc.longitude]] == null){
             cameras[[singleLoc.latitude, singleLoc.longitude]] = singleLoc;
         }else {
-            cameras[[singleLoc.latitude, singleLoc.longitude]].timeStamp += '\r\n' + singleLoc.timeStamp;
+            cameras[[singleLoc.latitude, singleLoc.longitude]].timeStamp += '\n' + singleLoc.timeStamp;
         }
     });
 
@@ -38,12 +38,13 @@ const Map = ({profileData}) => {
 
                 {Object.values(cameras).map(singleLoc => (
                   
-                    <Marker riseOnHover={true} position={[singleLoc.latitude, singleLoc.longitude]}>
+                    <Marker key={uuid()} riseOnHover={true} position={[singleLoc.latitude, singleLoc.longitude]}>
                         <Popup autoClose={false} position={[singleLoc.latitude, singleLoc.longitude]}>                      
                         <div>
                             <h4><b>Address:</b> <br></br> {singleLoc.streetName}</h4>
                             <br></br>
-                            <h5><b>Timestamps:</b> <br></br> {singleLoc.timeStamp}</h5>
+                            <b>Timestamps:</b>
+                            <div id="TS"> {singleLoc.timeStamp.split("\n").map(str => <p>{str}</p>)}</div>
                         </div>
 
                         </Popup>

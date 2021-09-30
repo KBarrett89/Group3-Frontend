@@ -8,14 +8,41 @@ import useToken from './useToken';
 import SiteNavbar from './components/Home/Navbar';
 import GetProfile from './components/Profiles/GetProfile';
 import PageNotFound from './components/Dashboard/PageNotFound';
+import { Button } from 'react-bootstrap'
+import { useHistory } from 'react-router';
+import axios from 'axios';
+
  
 function App() {
+
+  const history = useHistory()
+  const config = require('./config/default.json');
 
   const { token, setToken } = useToken();
   if(!token) {
     return <Login setToken={setToken} />
   }
+    
+  const handleLogout = () => {
+    sessionStorage.removeItem('token');
 
+    axios.get(`${config.baseUrl}/logout`
+    )
+    .then(res => {
+    const loggingOut = res.data
+    console.log(loggingOut)
+    })
+    .catch(err => {
+      console.log(err)
+      history.push("/page-not-found")
+    })
+
+    window.location.href = '/login';
+    
+  }
+    
+    
+  
 
   return (
     <div className="wrapper">
@@ -35,6 +62,9 @@ function App() {
                     
             </Switch>
       </BrowserRouter>
+
+      <Button id="logout" variant="primary" size="lg" block onClick={handleLogout}>Logout</Button>{' '}
+
     </div>
   );
 }

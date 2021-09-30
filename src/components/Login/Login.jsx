@@ -3,8 +3,11 @@ import './Login.css';
 import PropTypes from 'prop-types';
 
 async function loginUser(credentials) {
-    return fetch('http://54.76.136.203/authenticate', {
+    const config = require('../../config/default.json');
+    return fetch(`${config.baseUrl}/authenticate`, {
       method: 'POST',
+      credentials:'include',
+      mode:'cors',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -24,10 +27,9 @@ async function loginUser(credentials) {
         password
       });
       setToken(token);
+      window.location.href = '/';
     }
 
-
-   
 
     return (
       <div id='LoginBar'>
@@ -43,7 +45,7 @@ async function loginUser(credentials) {
           
           </label>
           <div>
-            <button type="submit">Submit</button>
+            <button type="submit" >Submit</button>
           </div>
         </form>
         </div>
