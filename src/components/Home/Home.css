@@ -34,24 +34,51 @@
 }
 #names{
     position: fixed;
-    word-spacing: 15mm;
+    
     left: 25%;
    display: inline;
-    top: 5%;
+    
     color:rgb(85, 255, 249) ;
     font-size: 5mm;
 }
 #nav{
     color: white;
-    position:fixed;
+    position:relative;
    display: inline;
     font-size: 6mm;
     left: 2.5%;
     top: 5mm;
-    z-index: 3;
+    z-index: 5;
 
 }
 
 #hyper:visited{
     color: rgb(85, 255, 249);
+}
+
+#kb{
+    position: fixed;
+    top: 10%;
+    left: 21%;
+}
+#dm{
+    position: fixed;
+    top: 10%;
+    left: 31%;
+}
+
+#sk{
+    position: fixed;
+    top: 10%;
+    left: 41%;
+}
+#db{
+    position: fixed;
+    top: 10%;
+    left: 51%;
+}
+#rd{
+    position: fixed;
+    top: 10%;
+    left: 61%;
 }
