@@ -9,6 +9,7 @@ pipeline {
 	stages {
 		stage('build'){
 			steps {
+				sh'cp ./deploymentConfig/config.json ./src/config/default.json'
 				sh 'docker system prune -f'
 				sh 'docker-compose build'
 			}
