@@ -4,32 +4,21 @@ import axios from 'axios'
 import Map from './Map'
 
 
-const Results = () => {
+
+const Results = ({profileData}) => {
+
+    console.log(profileData)
 
     const params = useParams()
     const reg = params.reg
-    const [profileData,setData]= useState("")
+    
     const authToken = sessionStorage.getItem('token')
     const userToken = JSON.parse(authToken)
     const config = require('../../config/default.json');
+     
  
     console.log(userToken?.token)
     
-    useEffect(() => {
-
-        const getProfileData = () => {
-            axios.get(`${config.baseUrl}/getVehicleRegByPlate/${reg}`, {
-                headers: {"Authorization" : `Bearer ${userToken?.token}`} 
-              })
-          .then(res => {
-          const profileJSON = res.data
-          setData(profileJSON)
-            
-          })
-          .catch(err => console.log(err))
-        }
-        getProfileData()
-        }, [])
 
         
     return (

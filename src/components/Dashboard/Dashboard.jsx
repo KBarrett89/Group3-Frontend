@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom'
 import './Dashboard.css';
 import axios from 'axios'
-import { waitFor } from '@testing-library/react';
-
+import swal from 'sweetalert';
 
 
   const RegSearch = () => {
@@ -32,12 +31,17 @@ import { waitFor } from '@testing-library/react';
         console.log(profileJSON)
         setData(profileJSON)
         
-        if(Object.keys(profileJSON).length !== 0){
+        if(profileJSON.person.forename !== null){
 
           history.push(/GetProfile/ + regSearch)
-      
+          
         }
         else { 
+          swal({
+            title: "Invalid Search",
+            text: "Your query does not match a license plate on record.",
+            type: "warning"
+        })
           console.log("failed")
         }
         
