@@ -43,19 +43,29 @@ left: 28%;
 }
 
 #timeloc{
-    
     position: relative;
     color: black;
-    font-size: 3.25mm;
+    font-size: 4mm;
     font-family: Arial, Helvetica, sans-serif;
     width: 30%;
-    top: 100mm;
-    background-color:white;
-    
+    top: 76mm;
+    background-color:rgb(218, 214, 214);
+    left: 2mm;
+    padding-left: 4mm;
+      
     
 }
 /* button*/
 #showdata{
     position: fixed;
     top: 1mm;
+}
+table{
+    border-collapse: separate;
+    border-spacing: 50px 0;
+    text-align: center;
+}
+#LD{
+    text-align: center;
+    
 }

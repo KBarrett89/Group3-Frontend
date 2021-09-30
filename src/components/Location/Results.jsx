@@ -3,6 +3,7 @@ import {useParams} from "react-router"
 import axios from 'axios'
 import Map from './Map'
 
+
 const Results = () => {
 
     const params = useParams()
@@ -11,7 +12,7 @@ const Results = () => {
     const authToken = sessionStorage.getItem('token')
     const userToken = JSON.parse(authToken)
     const config = require('../../config/default.json');
-
+ 
     console.log(userToken?.token)
     
     useEffect(() => {
@@ -23,6 +24,7 @@ const Results = () => {
           .then(res => {
           const profileJSON = res.data
           setData(profileJSON)
+            
           })
           .catch(err => console.log(err))
         }

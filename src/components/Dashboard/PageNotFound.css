@@ -3,6 +3,7 @@
     background-image: url(./404background.png);
     background-repeat: no-repeat;
     top:0mm;
+    z-index: -1;
 }
 
 #em{
