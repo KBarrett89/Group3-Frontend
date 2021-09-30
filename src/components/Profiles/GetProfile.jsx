@@ -49,7 +49,7 @@ const GetProfile = () => {
           <ProfileRecord profileData={profileData} buttonClick={buttonClick}/>
         }
         </div>
-        <Results/>
+        <Results profileData={profileData}/>
       </>
   );
 }
